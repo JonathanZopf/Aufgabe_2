@@ -35,6 +35,20 @@ class Chessboard(val size: Int) {
         }
     }
 
+    fun fieldsWithNoCollision() : List<Pair<Int, Int>> {
+        val fields = mutableListOf<Pair<Int, Int>>()
+        for (x in 0 until size) {
+            for (y in 0 until size) {
+                val hasQueen = queens.none { it.position == Pair(x, y) }
+                if (hasQueen) break
+                val hasCollision = queens.any { it.satisfiesConstraintsWithOther(Queen(x, y)) }
+                if (hasCollision) break
+                fields.add(Pair(x, y))
+            }
+        }
+        return fields
+    }
+
     override fun equals(other: Any?): Boolean {
         if (this === other) return true
         if (other !is Chessboard) return false

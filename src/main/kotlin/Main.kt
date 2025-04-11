@@ -1,9 +1,12 @@
 package org.hszg
 
+import org.hszg.Solvers.EvolutionarySolver
+import org.hszg.Solvers.ForkJoinRecursiveSolver
+import org.hszg.Solvers.IterativeRepairSolver
 import org.hszg.Solvers.RecursiveSolver
 
 fun main() {
-    val queensToPlace = 12
+    val queensToPlace = 11
     val solver = RecursiveSolver()
     val startingTimeSolve = System.currentTimeMillis()
     val allSolutions = solver.solve(queensToPlace)
