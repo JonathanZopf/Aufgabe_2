@@ -6,6 +6,7 @@ import org.hszg.Solver
 class RecursiveSolver : Solver {
     override fun solve(size: Int): List<Chessboard> {
         val allSolutions = mutableListOf<Chessboard>()
+        val uniqueSolutions = mutableSetOf<String>()
 
         findAllSolutions(
             size = size,
@@ -14,7 +15,8 @@ class RecursiveSolver : Solver {
             cols = mutableSetOf(),
             diag1 = mutableSetOf(),
             diag2 = mutableSetOf(),
-            result = allSolutions
+            result = allSolutions,
+            uniqueSolutions = uniqueSolutions
         )
 
         return allSolutions
@@ -27,14 +29,21 @@ class RecursiveSolver : Solver {
         cols: MutableSet<Int>,
         diag1: MutableSet<Int>,
         diag2: MutableSet<Int>,
-        result: MutableList<Chessboard>
+        result: MutableList<Chessboard>,
+        uniqueSolutions: MutableSet<String>
     ) {
         if (row == size) {
             val board = Chessboard(size)
             for ((x, y) in placed) {
                 board.addQueen(x, y)
             }
-            result.add(board) // <-- Always add, no uniqueness check
+
+            // Generate canonical form for uniqueness check
+            val canonicalForm = board.getCanonicalForm()
+            if (!uniqueSolutions.contains(canonicalForm)) {
+                uniqueSolutions.add(canonicalForm)
+                result.add(board)
+            }
             return
         }
 
@@ -49,7 +58,7 @@ class RecursiveSolver : Solver {
             diag1.add(d1)
             diag2.add(d2)
 
-            findAllSolutions(size, row + 1, placed, cols, diag1, diag2, result)
+            findAllSolutions(size, row + 1, placed, cols, diag1, diag2, result, uniqueSolutions)
 
             placed.removeLast()
             cols.remove(col)

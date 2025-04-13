@@ -5,13 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f17847af-9068-4f9d-a2a7-0c6f61f37143" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Solvers/EvolutionarySolver.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Solvers/ForkJoinRecursiveSolver.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Solvers/IterativeRepairSolver.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/Solvers/JonathanRecursiveSolver.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Chessboard.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Chessboard.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/kotlin/Main.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Main.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/Solvers/RecursiveSolver.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/Solvers/RecursiveSolver.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +117,8 @@
       <workItem from="1744101544211" duration="2642000" />
       <workItem from="1744106578661" duration="96000" />
       <workItem from="1744130570673" duration="2559000" />
-      <workItem from="1744358935606" duration="2573000" />
+      <workItem from="1744358935606" duration="4637000" />
+      <workItem from="1744573673504" duration="1128000" />
     </task>
     <servers />
   </component>
